@@ -21,5 +21,8 @@ class AreaExtractor:
             raise ValueError(f"Unknown Area Code")
         
         phone_number_without_area_code = Core().remove_prefix_until(remaining_phone_number, area_code)
+
+        while phone_number_without_area_code and not phone_number_without_area_code[0].isdigit():
+            phone_number_without_area_code = phone_number_without_area_code[1:]
                 
         return (self.code_area_dict[area_code], phone_number_without_area_code)
