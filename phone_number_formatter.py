@@ -8,7 +8,12 @@ class DIN5008Formatter:
         parts = []
 
         if phone.country_code:
+            if phone.country_code.startswith("+"):
+                parts.append(phone.country_code.strip())
+            else:
+                parts.append("+" + phone.country_code.strip())
             parts.append(phone.country_code.strip())
+
 
         elif not phone.country_code and phone.area_code:
             parts.append("0" + phone.area_code.strip())  
