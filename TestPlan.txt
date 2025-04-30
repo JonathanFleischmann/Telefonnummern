@@ -1,0 +1,18 @@
+Country Codes testen: 
+-> 1. In Ländern enthaltene Ziffer eingeben und Richtige Ausgabe erwarten
+-> 2. In Ländern nicht enthaltene Ziffer eingeben und Fehler erwarten
+-> 3. Leerer String eingeben und Defaultwert erwarten
+
+Ortsnummern testen: 
+-> 1. In Orten enthaltene Nummer eingeben und Richtige Ausgabe erwarten
+-> 2. In Orten nicht enthaltene Ziffer eingeben und entsprechende Ausgabe erwarten
+-> 3. Leerer String eingeben und Fehler erwarten
+
+
+Systemtests:
+-> Vorgegebene Nummern eingeben und die Ausgabe vergleichen
+-> Fehlerhafte Nummern eingeben und Fehler erwarten
+-> Leere Nummern eingeben und Fehler erwarten
+
+Manuelle Tests:
+-> UI Tests
