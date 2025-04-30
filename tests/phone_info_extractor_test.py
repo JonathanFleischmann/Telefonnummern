@@ -12,7 +12,7 @@ def test_get_extracted_info_from_phone_number_happy_path(phone_info_extractor):
     phone_number = "+4930123456789"
 
     # Expected results
-    expected_phone_number = PhoneNumber("+49", "30", "123456789", None)
+    expected_phone_number = PhoneNumber("49", "30", "123456789", None)
     expected_number_info = NumberInformation("Germany", "Berlin")
 
     # Call the method
@@ -25,7 +25,7 @@ def test_get_extracted_info_with_extension(phone_info_extractor):
     phone_number = "+4930123456789-123"
 
     # Expected results
-    expected_phone_number = PhoneNumber("+49", "30", "123456789", "123")
+    expected_phone_number = PhoneNumber("49", "30", "123456789", "123")
     expected_number_info = NumberInformation("Germany", "Berlin")
 
     # Call the method
@@ -46,7 +46,7 @@ def test_get_extracted_info_invalid_area_code(phone_info_extractor):
     phone_number = "+49123123456789"
 
     # Expected results
-    expected_phone_number = PhoneNumber("+49", None, "123123456789", None)
+    expected_phone_number = PhoneNumber("49", None, "123123456789", None)
     expected_number_info = NumberInformation("Germany", None)
 
     # Call the method
