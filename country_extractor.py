@@ -6,10 +6,10 @@ from phone_parse_result import PhoneParseResult
 class CountryExtractor:
 
     def __init__(self):
-        self.code_country_dict = CountryCodeReadingUtility().load_country_codes()
-        self.default_country = CountryCodeReadingUtility().get_default_country()
+        self.code_country_dict: dict[str, str] = CountryCodeReadingUtility().load_country_codes()
+        self.default_country: str = CountryCodeReadingUtility().get_default_country()
 
-    def get_country_and_remaining_number_from_phone_number(self, phone_number: str) -> PhoneParseResult:
+    def get_country(self, phone_number: str) -> PhoneParseResult:
         core = Core()
 
         country_code_prefix = ''

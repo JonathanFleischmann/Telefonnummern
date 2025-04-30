@@ -6,9 +6,9 @@ from phone_parse_result import PhoneParseResult
 class AreaExtractor:
 
     def __init__(self):
-        self.code_area_dict = AreaCodeReadingUtility().load_area_codes()
+        self.code_area_dict: dict[str, str] = AreaCodeReadingUtility().load_area_codes()
 
-    def get_area_and_remaining_number_from_remaining_phone_number(self, remaining_phone_number: str) -> PhoneParseResult:
+    def get_extension(self, remaining_phone_number: str) -> PhoneParseResult:
 
         filtered_phone_number = remaining_phone_number.replace(' ', '').replace('/', '').replace('(', '').replace(')', '').replace('[', '').replace(']', '')
         
