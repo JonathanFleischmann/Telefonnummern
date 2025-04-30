@@ -44,6 +44,6 @@ class UserInterface:
                     output += f"\nVorwahl: {area_code}"
                     messagebox.showinfo("Ergebnis", output)
                 except ValueError as e:
-                    print(f"Error: {e}")
+                    messagebox.showerror("Fehler", f"Ungültige Telefonnummer: {e}")
             else:
                 messagebox.showwarning("Eingabe", "Bitte geben Sie eine Telefonnummer ein.")
