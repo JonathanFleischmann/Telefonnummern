@@ -6,22 +6,19 @@ class DIN5008Formatter:
     def format_to_din5008(phone: PhoneNumber) -> str:
         """Formatiert ein PhoneNumber-Objekt in das DIN 5008-Format."""
         parts = []
-        # Landesvorwahl (falls vorhanden)
+
         if phone.country_code:
             parts.append(phone.country_code.strip())
-        else:
-            parts.append("0")  # Standard für nationale Nummern
 
-        # Ortskennzahl (falls vorhanden)
+        elif not phone.country_code and phone.area_code:
+            parts.append("0" + phone.area_code.strip())  
+
         if phone.area_code:
             parts.append(phone.area_code.strip())
 
-        # Telefonnummer (Pflichtfeld)
         parts.append(phone.phone_number.strip())
 
-        # Durchwahl (falls vorhanden)
         if phone.extension:
-            parts.append(phone.extension.strip())
+            return " ".join(parts) + f"-{phone.extension.strip()}"
 
-        # Verbinden der Teile mit Leerzeichen
         return " ".join(parts)
