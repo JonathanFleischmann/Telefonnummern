@@ -1,17 +1,26 @@
-Country Codes testen: 
--> 1. In Ländern enthaltene Ziffer eingeben und Richtige Ausgabe erwarten
--> 2. In Ländern nicht enthaltene Ziffer eingeben und Fehler erwarten
--> 3. Leerer String eingeben und Defaultwert erwarten
+Testplan 
 
-Ortsnummern testen: 
--> 1. In Orten enthaltene Nummer eingeben und Richtige Ausgabe erwarten
--> 2. In Orten nicht enthaltene Ziffer eingeben und entsprechende Ausgabe erwarten
--> 3. Leerer String eingeben und Fehler erwarten
+1. Ziele
 
-Systemtests:
--> Vorgegebene Nummern eingeben und die Ausgabe vergleichen
--> Fehlerhafte Nummern eingeben und Fehler erwarten
--> Leere Nummern eingeben und Fehler erwarten
+- Telefonnummern sollen korrekt analysiert und formatiert werden.
+- Fehlerhafte Eingaben sollen ordnungsgemäß behandelt werden.
+- Alle Komponenten sollen wie erwartet funktionieren.
 
-Manuelle Tests:
--> UI Tests
+
+2. Testendkriterien
+Die Tests gelten als erfolgreich abgeschlossen, wenn:
+- Alle definierten Testfälle (funktionale, nicht-funktionale und Edge-Case-Tests) erfolgreich bestanden wurden.
+- Keine kritischen Fehler oder Blocker in der Anwendung verbleiben.
+- Die Anwendung die Anforderungen an die Funktionalität und Benutzerfreundlichkeit erfüllt.
+- Die Abdeckung der Tests mindestens 90 % des Codes umfasst (Code Coverage).
+
+3. Testmethode / Abdeckung
+Die Tests werden in den folgenden Kategorien durchgeführt:
+-Funktionale Tests
+-Systemtests
+-Edge-Case-Tests
+-Manuelle Tests
+
+
+4. Dokumentation
+Die Ergebnisse werden in TestErgebnisse.txt festgehalten
