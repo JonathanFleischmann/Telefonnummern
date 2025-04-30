@@ -1,6 +1,4 @@
 from phone_info_extractor import PhoneInfoExtractor
-from phone_number import PhoneNumber
-from number_information import NumberInformation
 from phone_number_formatter import DIN5008Formatter
 
 from user_interface import UserInterface
