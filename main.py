@@ -1,6 +1,6 @@
-from country_extractor import CountryExtractor
-from area_extractor import AreaExtractor
-
+from phone_info_extractor import PhoneInfoExtractor
+from phone_number import PhoneNumber
+from number_information import NumberInformation
 
 test_strings = [
     "+49 0201 123456",
@@ -17,15 +17,9 @@ test_strings = [
 
 for test_string in test_strings:
     print(f"Test string: {test_string}")
-    country_extractor = CountryExtractor()
-    area_extractor = AreaExtractor()
+    phone_info_extractor = PhoneInfoExtractor()
     try:
-        country_result: tuple[str, str]  = country_extractor.get_country_and_remaining_number_from_phone_number(test_string)
-        if country_result[0] == "Germany":
-            area_result: tuple[str, str] = area_extractor.get_area_and_remaining_number_from_remaining_phone_number(country_result[1])
-            print(f"Result: {country_result[0]} {area_result[0]} {area_result[1]}")#
-        else:
-            print(f"Result: {country_result[0]} {country_result[1]}")
+        phone_info: dict[PhoneNumber, NumberInformation] = phone_info_extractor.get_extracted_info_from_phone_number(test_string)
+        print(f"Phone number: {phone_info[0].country_code}, {phone_info[0].area_code}, {phone_info[0].phone_number}, {phone_info[0].extension}")
     except ValueError as e:
-        # catch the ValueError and print the error message
         print(f"Error: {e}")
