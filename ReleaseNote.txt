@@ -1,0 +1,19 @@
+1. Neues Feature
+    - Telefonnummern werden eingelesen, in ihre bestandteile geteilt und strukturiert ausgegeben
+    - Deutsche Telefonnummern werden, wenn möglich anhand von Vorwahlen in Regionen eingeteilt
+    - Bei ausländischen Telefonnummern wird das Land annotiert
+    - Inkorrekte Telefonnummern werden zurückgewiesen
+
+2. Verbesserte Funktionen und Vorteile
+    Keine (Erste Version)
+
+3. Hinweise zur Nutzung
+    Keine
+    
+4. Einschränkungen
+    Auschließlich bei deutschen Telefonnummern werden Regionsinformationen extrahiert
+    Eingegebene Daten werden nicht gespeichert
+    In einzelfällen kann das System probleme beim Parsen von Telefonnummern haben
+
+5. Nächste Schritte und Support
+    Bei Fragen und problemen stehen wir ihnen gerne zu unseren Geschäftszeiten zur verfügung

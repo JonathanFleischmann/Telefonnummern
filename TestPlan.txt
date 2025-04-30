@@ -8,7 +8,6 @@ Ortsnummern testen:
 -> 2. In Orten nicht enthaltene Ziffer eingeben und entsprechende Ausgabe erwarten
 -> 3. Leerer String eingeben und Fehler erwarten
 
-
 Systemtests:
 -> Vorgegebene Nummern eingeben und die Ausgabe vergleichen
 -> Fehlerhafte Nummern eingeben und Fehler erwarten
