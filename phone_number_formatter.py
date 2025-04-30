@@ -12,7 +12,6 @@ class DIN5008Formatter:
                 parts.append(phone.country_code.strip())
             else:
                 parts.append("+" + phone.country_code.strip())
-            parts.append(phone.country_code.strip())
 
 
         elif not phone.country_code and phone.area_code:
