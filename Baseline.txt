@@ -1,0 +1,27 @@
+Baseline:
+
+1. Anforderungen und Spezifikation:
+
+- akzeptierte user stories:
+	Als Vertriebsmitarbeiter/in möchte ich, dass eingegebene Telefonnummern automatisch in separate Felder für Landesvorwahl, Ortskennzahl, Nummer und Durchwahl zerlegt und diese Informationen strukturiert angezeigt werden. Damit ich schnell und einfach die relevanten Informationen für Anrufe und die Pflege der Kundendaten habe.
+	Als Kundenservice-Mitarbeiter/in möchte ich, dass die vollständige Telefonnummer schnell und deutlich angezeigt wird. Damit ich Anrufer schnell identifizieren und bei Bedarf zurückrufen kann, ohne die Nummer manuell zusammensetzen zu müssen.
+	
+-Softwaredesign dokument: Hat Joni
+
+2. Design- implementierungsartefakte
+
+-Quellcode: https://github.com/JonathanFleischmann/Telefonnummern/tree/main
+
+3. Testartefakte
+
+- Testplan: siehe testPlan.txt
+- Ergebnis: siehe testErgebnis.txt (TODO)
+
+4. Deployment- und Rollout Pläne
+
+- .exe Datei erstellen und per email versenden
+
+5. Dokumentation für Kunden
+
+- Releasenote.txt 
+- Benutzerdokumentation 
