@@ -15,7 +15,12 @@ def country_extractor():
 def test_get_country_and_remaining_number_possible_value(country_extractor):
     # Test with a known country code
     result = country_extractor.get_country_and_remaining_number_from_phone_number("+49123456789")
-    assert result == ("Germany", "123456789")
+    assert result == ("Germany",'+49', "123456789")
+
+def test_get_country_and_remaining_number_Britian(country_extractor):
+    # Test with a known country code
+    result = country_extractor.get_country_and_remaining_number_from_phone_number("+44123456789")
+    assert result == ("United Kingdom",'+44', "123456789")
 
 def test_get_country_and_remaining_number_unknown_value(country_extractor):
     # Test with an unknown country code
