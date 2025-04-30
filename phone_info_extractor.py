@@ -2,6 +2,7 @@ from phone_number import PhoneNumber
 from number_information import NumberInformation
 
 from core import Core
+from phone_parse_result import PhoneParseResult
 
 from country_extractor import CountryExtractor
 from area_extractor import AreaExtractor
@@ -27,18 +28,18 @@ class PhoneInfoExtractor:
 
         core = Core()
 
-        country_info = country_extractor.get_country_and_remaining_number_from_phone_number(phone_number)
-        country = country_info[0]
-        country_code = country_info[1]
+        country_info: PhoneParseResult = country_extractor.get_country_and_remaining_number_from_phone_number(phone_number)
+        country = country_info.value
+        country_code = country_info.code
 
-        remaining_number = country_info[2]
+        remaining_number = country_info.remaining_number
 
         try:
-            area_info = area_extractor.get_area_and_remaining_number_from_remaining_phone_number(remaining_number)
-            area = area_info[0]
-            area_code = area_info[1]
+            area_info: PhoneParseResult = area_extractor.get_area_and_remaining_number_from_remaining_phone_number(remaining_number)
+            area = area_info.value
+            area_code = area_info.code
 
-            remaining_number = area_info[2]
+            remaining_number = area_info.remaining_number
 
         except ValueError:
             area = None
@@ -46,8 +47,8 @@ class PhoneInfoExtractor:
 
         try:
             extension_info = extension_extractor.get_extension_from_remaining_phone_number(remaining_number)
-            extension = extension_info[0]
-            number = core.clean_from_special_characters(extension_info[1])
+            extension = extension_info.code
+            number = core.clean_from_special_characters(extension_info.remaining_number)
             
         except ValueError:
             extension = None

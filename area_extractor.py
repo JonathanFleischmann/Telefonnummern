@@ -1,12 +1,14 @@
 from area_code_reading_utility import AreaCodeReadingUtility
 from core import Core
 
+from phone_parse_result import PhoneParseResult
+
 class AreaExtractor:
 
     def __init__(self):
         self.code_area_dict = AreaCodeReadingUtility().load_area_codes()
 
-    def get_area_and_remaining_number_from_remaining_phone_number(self, remaining_phone_number: str) -> tuple[str, str, str]:
+    def get_area_and_remaining_number_from_remaining_phone_number(self, remaining_phone_number: str) -> PhoneParseResult:
 
         filtered_phone_number = remaining_phone_number.replace(' ', '').replace('/', '').replace('(', '').replace(')', '').replace('[', '').replace(']', '')
         
@@ -25,4 +27,5 @@ class AreaExtractor:
         while phone_number_without_area_code and not phone_number_without_area_code[0].isdigit():
             phone_number_without_area_code = phone_number_without_area_code[1:]
                 
-        return (self.code_area_dict[area_code], area_code, phone_number_without_area_code)
+
+        return PhoneParseResult(self.code_area_dict[area_code], area_code, phone_number_without_area_code)

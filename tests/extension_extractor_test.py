@@ -1,6 +1,8 @@
 import pytest
 from extension_extractor import ExtensionExtractor
 
+from phone_parse_result import PhoneParseResult
+
 @pytest.fixture
 def extension_extractor():
     return ExtensionExtractor()
@@ -9,7 +11,7 @@ def test_get_extension_valid(extension_extractor):
     # Test with a valid extension
     phone_number = "1234567-123"
     result = extension_extractor.get_extension_from_remaining_phone_number(phone_number)
-    assert result == ("123", "1234567")
+    assert result == PhoneParseResult(None, "123", "1234567")
 
 def test_get_extension_no_extension(extension_extractor):
     # Test with no valid extension (last sequence too long)

@@ -1,13 +1,15 @@
 from country_code_reading_utility import CountryCodeReadingUtility
 from core import Core
 
+from phone_parse_result import PhoneParseResult
+
 class CountryExtractor:
 
     def __init__(self):
         self.code_country_dict = CountryCodeReadingUtility().load_country_codes()
         self.default_country = CountryCodeReadingUtility().get_default_country()
 
-    def get_country_and_remaining_number_from_phone_number(self, phone_number: str) -> tuple[str, str, str]:
+    def get_country_and_remaining_number_from_phone_number(self, phone_number: str) -> PhoneParseResult:
         core = Core()
 
         country_code_prefix = ''
@@ -22,7 +24,7 @@ class CountryExtractor:
 
         if country_code_prefix == '':
             if cleaned_phone_number.startswith('0'):
-                return (self.default_country, None, core.remove_prefix_until(phone_number, '0'))
+                return PhoneParseResult(self.default_country, None, core.remove_prefix_until(phone_number, '0'))
             else:
                 raise ValueError(f"Incorrect Phone Number Format - missing leading 0")
         
@@ -35,6 +37,6 @@ class CountryExtractor:
 
         for country_code in self.code_country_dict.keys():
             if remaining_phone_number.startswith(country_code):
-                return (self.code_country_dict[country_code], country_code_prefix + country_code, core.remove_prefix_until(phone_number, country_code))
+                return PhoneParseResult(self.code_country_dict[country_code], country_code_prefix + country_code, core.remove_prefix_until(phone_number, country_code))
 
         raise ValueError(f"Incorrect Country Code")
