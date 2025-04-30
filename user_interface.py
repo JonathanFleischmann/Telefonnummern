@@ -1,10 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
 
-
-from phone_info_extractor import PhoneInfoExtractor
 from phone_number import PhoneNumber
 from number_information import NumberInformation
+
+from phone_info_extractor import PhoneInfoExtractor
+from phone_number_formatter import DIN5008Formatter
+
+
+
 
 
 class UserInterface:
@@ -35,9 +39,10 @@ class UserInterface:
             phone_number = entry.get()
             if phone_number:
                 phone_info_extractor = PhoneInfoExtractor()
+                phone_number_formatter = DIN5008Formatter()
                 try:
                     phone_info: dict[PhoneNumber, NumberInformation] = phone_info_extractor.get_extracted_info_from_phone_number(phone_number)
-                    output: str = f"Ihre eingegebene Telefonnummer: {phone_number}"
+                    output: str = f"Ihre eingegebene Telefonnummer: {phone_number_formatter.format_to_din5008(phone_info[0])}"
                     country: str = phone_info[1].country or 'unbekannt'
                     area_code: str = phone_info[1].area or 'unbekannt'
                     output += f"\nLand: {country}"
