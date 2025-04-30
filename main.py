@@ -3,6 +3,8 @@ from phone_number import PhoneNumber
 from number_information import NumberInformation
 from phone_number_formatter import DIN5008Formatter
 
+from user_interface import UserInterface
+
 test_strings = [
     "+49 0201 123456",
     "+44 0201123456",
@@ -26,3 +28,5 @@ for test_string in test_strings:
         print(f"Original: {test_string} => Formatted: {formatted_number}")
     except ValueError as e:
         print(f"Error: {e}")
+    
+UserInterface().start_user_interface()
