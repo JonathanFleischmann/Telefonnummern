@@ -1,1 +1,7 @@
-In der Aktuellen Version der Software existiert noch keine Benutzeroberfläche, sie ist also für Nutzende noch nicht zugänglich
+Um das Programm zu nutzen muss es ausgeführt werden. Daraufhin öffnet sich die Benutzeroberfläche.
+
+Man kann dort eine Telefonnummer in das Eingabefeld eingeben. 
+Drückt man auf den Button "Bestätigen" öffnet sich ein Popup mit den berechneten Informationen zu der Telefonnummer.
+
+Dieses lässt sich über den Exit-Button des Fensters oben rechts oder durch Klick auf den Button "OK" schließen. 
+Das Programm selbst lässt sich ebenfalls über den Exit-Button seines Fensters oder über den Button "Beenden" schließen".

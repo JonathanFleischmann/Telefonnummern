@@ -7,7 +7,7 @@ class ExtensionExtractor:
     def __init__(self):
         pass
     
-    def get_extension_from_remaining_phone_number(self, phone_number: str) -> PhoneParseResult:
+    def get_extension(self, phone_number: str) -> PhoneParseResult:
 
         last_number_sequence = Core().get_last_number_sequence(phone_number)
 

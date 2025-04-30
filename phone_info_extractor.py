@@ -28,14 +28,14 @@ class PhoneInfoExtractor:
 
         core = Core()
 
-        country_info: PhoneParseResult = country_extractor.get_country_and_remaining_number_from_phone_number(phone_number)
+        country_info: PhoneParseResult = country_extractor.get_country(phone_number)
         country = country_info.value
         country_code = country_info.code
 
         remaining_number = country_info.remaining_number
 
         try:
-            area_info: PhoneParseResult = area_extractor.get_area_and_remaining_number_from_remaining_phone_number(remaining_number)
+            area_info: PhoneParseResult = area_extractor.get_extension(remaining_number)
             area = area_info.value
             area_code = area_info.code
 
@@ -46,7 +46,7 @@ class PhoneInfoExtractor:
             area_code = None
 
         try:
-            extension_info = extension_extractor.get_extension_from_remaining_phone_number(remaining_number)
+            extension_info = extension_extractor.get_extension(remaining_number)
             extension = extension_info.code
             number = core.clean_from_special_characters(extension_info.remaining_number)
             
