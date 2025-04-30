@@ -24,4 +24,4 @@ def test_get_extension_special_characters(extension_extractor):
     # Test with special characters in the phone number
     phone_number = "123-456/789-12"
     result = extension_extractor.get_extension_from_remaining_phone_number(phone_number)
-    assert result == ("12", "123-456/789")
+    assert result == PhoneParseResult(None, "12", "123-456/789")

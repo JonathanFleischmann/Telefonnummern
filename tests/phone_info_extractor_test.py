@@ -45,8 +45,14 @@ def test_get_extracted_info_invalid_area_code(phone_info_extractor):
     # Test with an invalid area code
     phone_number = "+49123123456789"
 
-    with pytest.raises(ValueError, match="Unknown Area Code"):
-        phone_info_extractor.get_extracted_info_from_phone_number(phone_number)
+    # Expected results
+    expected_phone_number = PhoneNumber("+49", None, "123123456789", None)
+    expected_number_info = NumberInformation("Germany", None)
+
+    # Call the method
+    result = phone_info_extractor.get_extracted_info_from_phone_number(phone_number)
+
+    assert_results_equal(result, expected_phone_number, expected_number_info)
 
 def test_get_extracted_info_missing_country_code(phone_info_extractor):
     # Test with a phone number missing a country code
