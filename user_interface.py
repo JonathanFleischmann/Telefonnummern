@@ -52,3 +52,8 @@ class UserInterface:
                     messagebox.showerror("Fehler", f"Ungültige Telefonnummer: {e}")
             else:
                 messagebox.showwarning("Eingabe", "Bitte geben Sie eine Telefonnummer ein.")
+
+
+if __name__ == "__main__":
+    ui = UserInterface()
+    ui.start_user_interface()
