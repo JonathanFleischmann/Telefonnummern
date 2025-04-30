@@ -6,7 +6,7 @@ class AreaExtractor:
     def __init__(self):
         self.code_area_dict = AreaCodeReadingUtility().load_area_codes()
 
-    def get_area_and_remaining_number_from_remaining_phone_number(self, remaining_phone_number: str) -> tuple[str, str]:
+    def get_area_and_remaining_number_from_remaining_phone_number(self, remaining_phone_number: str) -> tuple[str, str, str]:
 
         filtered_phone_number = remaining_phone_number.replace(' ', '').replace('/', '').replace('(', '').replace(')', '').replace('[', '').replace(']', '')
         
@@ -22,4 +22,4 @@ class AreaExtractor:
         
         phone_number_without_area_code = Core().remove_prefix_until(remaining_phone_number, area_code)
                 
-        return (self.code_area_dict[area_code], phone_number_without_area_code)
+        return (self.code_area_dict[area_code], area_code, phone_number_without_area_code)
