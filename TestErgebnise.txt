@@ -1,0 +1,14 @@
+============================================================= test session starts ==============================================================
+platform win32 -- Python 3.10.11, pytest-8.3.5, pluggy-1.5.0
+rootdir: ..\Telefonnummern
+collected 31 items                                                                                                                              
+
+tests\area_extractor_test.py ....                                                                                                         [ 12%]
+tests\core_test.py ......                                                                                                                 [ 32%]
+tests\country_extractor_test.py ....                                                                                                      [ 45%]
+tests\extension_extractor_test.py ...                                                                                                     [ 54%]
+tests\phone_info_extractor_test.py ......                                                                                                 [ 74%]
+tests\phone_number_formatter_test.py ......                                                                                               [ 93%] 
+tests\test_sample.py ..                                                                                                                   [100%]
+
+============================================================== 31 passed in 0.22s ============================================================== 
