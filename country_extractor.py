@@ -37,6 +37,6 @@ class CountryExtractor:
 
         for country_code in self.code_country_dict.keys():
             if remaining_phone_number.startswith(country_code):
-                return PhoneParseResult(self.code_country_dict[country_code], country_code_prefix + country_code, core.remove_prefix_until(phone_number, country_code))
+                return PhoneParseResult(self.code_country_dict[country_code], country_code, core.remove_prefix_until(phone_number, country_code))
 
         raise ValueError(f"Incorrect Country Code")
